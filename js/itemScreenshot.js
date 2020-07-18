@@ -312,7 +312,7 @@ window.ItemScreenshot = {
         }
         
         return Promise.all(screenshots).then(results => {
-            results.forEach(item => {
+            results.forEach((item) => {
                 blocks.push({item: $(item.canvas), w: item.canvas.width + padding, h: item.canvas.height + padding});
             });
             
@@ -323,13 +323,14 @@ window.ItemScreenshot = {
 									display:inline-flex;
 									align-items:start;
 									justify-content:center;
-									flex-wrap:wrap;
+                                    flex-wrap:wrap;
+                                    background-color:#000000;
 									width:` + packer.root.w + `px">`;
 			
             for(var n = 0 ; n < blocks.length ; n++) {
                 var block = blocks[n];
                 if (block.fit) {
-					htmlTemplate += `<img src="` + block.item[0].toDataURL() + `" style="padding:`+ padding + `px; border-radius: 20px"/>`;
+					htmlTemplate += `<div style="display: flex;flex-direction: column"><span style="font-size:18px;color:#ffffff;">` + n + `</span><img src="` + block.item[0].toDataURL() + `" style="padding:`+ padding + `px; border-radius: 20px"/></div>`;
                 } else {
                     console.error("Couldn't pack image to canvas (Width Height):", block.w, block.h, "max. allowed size (Width Height):", packer.root.w, packer.root.h);
                 }
