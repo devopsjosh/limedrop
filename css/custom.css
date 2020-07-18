@@ -525,3 +525,52 @@ h6.drop-queue-styled {
 .navbar-icons{
   font-size: 20px;
 }
+
+.inventory-wrapper.grid .items-list {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+.inventory-wrapper.grid .items-list > div {
+    width: 300px;
+}
+.inventory-column {
+    width: 100%;
+    flex: 1 100%;
+    max-width: 100%;
+}
+.item-position {
+    font-size:2rem;
+    color: #ff0000 !important;
+}
+.comment-text {
+  flex: 1;
+}
+.comment-content {
+  width: 100%;
+}
+.grid .comment-content{
+  display: flex;
+  flex-direction: column;
+
+}
+.comment-content .comment-footer {
+  position: relative;
+}
+#inv-card-title {
+  display:flex;
+}
+#inv-card-title > h4 {
+  flex: 8;
+}
+.view-select {
+  opacity: 0.6;
+  max-width: 48px;
+  background-color: #53a53a;
+  color: white;
+  border: none;
+}
+.view-select.enabled {
+  opacity: 1 !important;
+}

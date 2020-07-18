@@ -515,8 +515,16 @@
 			<!-- column -->
 			<div class="col-xs-12 col-lg-8">
 			  <div class="card">
-				<h4 class="card-title ld-title-indent">Inventory</h4>
-				<div class="comment-widgets scrollable">
+			  	<div id="inv-card-title" class="card-title ">
+				<h4 class="ld-title-indent">Inventory </h4>
+				<Button id="list-toggle" class="view-select button">
+					<i class="ml-1 fas fa-list"></i>
+				</Button>
+				<Button id="grid-toggle" class="view-select button">
+					<i class="ml-1 fas fa-th-large"></i>
+				</Button>
+				</div>
+				<div class="inventory-wrapper comment-widgets scrollable">
 				  <div id="loader" hidden>
 					<div
 					  class="d-flex flex-column"

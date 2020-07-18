@@ -112,4 +112,19 @@ $(function() {
             $("#main-wrapper").attr("data-sidebartype", "full");
         }
     });
+    //****************************
+    /* This is for toggling views. List view is the default*/
+    //****************************
+    $('#grid-toggle').on("click", function() {
+        $(".inventory-wrapper").addClass("grid");
+        $(this).addClass('enabled');
+        $('#list-toggle').removeClass('enabled');
+    });
+    $('#list-toggle').on("click", function() {
+        if ($(".inventory-wrapper").hasClass("grid")) {
+            $(".inventory-wrapper").removeClass("grid");
+            $("#grid-toggle").removeClass('enabled');
+        }
+        $(this).addClass('enabled');
+    });
 });

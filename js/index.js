@@ -518,14 +518,16 @@ require(["D2Bot"], function (D2BOTAPI) {
         <div style="position:relative">
             <div id="png-` + itemUID + `"><i>image</i></div>
         </div>
-    </div>
-    <div class="p-2 comment-text">
+	</div>
+	<div class="comment-content">
+	<div class="p-2 comment-text">
 		<h6 class="-medium">` + title + `</h6>
 		<span class="m-b-15 d-block">` + description + `</span>
 	</div>
-    <div class="comment-footer w-100">
-        <span class="text-muted float-right">` + CurrentRealm + "/" + result.account + "/" + result.character + "/{" + itemUID + "}" + `</span>
-    </div>
+	<div class="comment-footer w-100">
+		<span class="text-muted float-right">` + CurrentRealm + "/" + result.account + "/" + result.character + "/{" + itemUID + "}" + `</span>
+	</div>
+	</div>
 </div>`;
 
 		// Todo: try using DOM operations instead of jQuery
