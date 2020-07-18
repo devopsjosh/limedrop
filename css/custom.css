@@ -319,6 +319,12 @@ td {
   display: none;
   padding-left: 5px;
   padding-right: 5px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #222;
 }
 
 .styled-item-menu input {
@@ -525,7 +531,9 @@ h6.drop-queue-styled {
 .navbar-icons{
   font-size: 20px;
 }
-
+.inventory-wrapper .comment-row {
+  position: relative;
+}
 .inventory-wrapper.grid .items-list {
   display: flex;
   flex-direction: row;
