@@ -479,7 +479,7 @@ require(["D2Bot"], function (D2BOTAPI) {
 
 	function $addItem(result) {
 		var itemUID = result.description.split("$")[1];
-
+		console.log(result)
 		// Check our queue list if the item is already listed there
 		var queuedItems = document.getElementById("dropQueueList").children;
 		for (var i = 0; i < queuedItems.length; i++) {
@@ -1556,8 +1556,7 @@ require(["D2Bot"], function (D2BOTAPI) {
 		}
 	});
 
-	$("#imgur-upload-btn").click(function () {
-		$("#upload-imgur-modal").modal("show");
+    function getDropQueueList(){
 		var queuedItems = document.getElementById("dropQueueList").children;
 		var itemList = {};
 		for (var i = 0; i < queuedItems.length; i++) {
@@ -1570,7 +1569,46 @@ require(["D2Bot"], function (D2BOTAPI) {
 				}
 			itemList[i] = item;
 		}
+		return itemList;
+	}
+	function handleFileSelect(event){
+		var files = this.files;
+		f = files[0]
+		const reader = new FileReader()
+		reader.onload = (function(importedFile){
+			console.log(importedFile)
+				var itemContent = JSON.parse(importedFile.target.result);
+				Object.keys(itemContent).forEach(function(key) {
+					var item = itemContent[key]
+					item.itemImage.code = item.itemImage.image;
+					item.itemImage.color = item.itemImage.itemColor;
+					var itemImage = JSON.stringify({...item.itemImage})
+					item.image = itemImage;
+					item.itemImage = null;
+					$addItem(item)
+				})});
+		reader.readAsText(f);
+	};
+	document.getElementById('importInput').addEventListener('change', handleFileSelect);
+	$("#import-btn").click(function () {
+		$("#importInput").click();
+		
+	});
+	$("#export-btn").click(function () {
+		var itemList = getDropQueueList();
+		let exportContent = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(itemList));
+		var downloadAnchorNode = document.createElement('a');
+		downloadAnchorNode.setAttribute("href",     exportContent);
+		downloadAnchorNode.setAttribute("download", "itemQueue.json");
+		document.body.appendChild(downloadAnchorNode); // required for firefox
+		downloadAnchorNode.click();
+		downloadAnchorNode.remove();
+		
+	});
 
+	$("#imgur-upload-btn").click(function () {
+		$("#upload-imgur-modal").modal("show");
+		var itemList = getDropQueueList();
 		var container = document.getElementById("itemScreenshot");
 		window.ItemScreenshot.drawCompilation(itemList).then((template) => {
 			container.innerHTML = template;
