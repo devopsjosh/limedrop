@@ -1620,6 +1620,7 @@ require(["D2Bot"], function (D2BOTAPI) {
 		var itemLists = JSON.parse(window.localStorage.getItem("itemLists")) || null;
 		if (itemLists) {
 			delete itemLists[selectedList];
+			$("#item-list-select option:selected").remove()
 		}
 		window.localStorage.setItem("itemLists", JSON.stringify(itemLists))
 	})
