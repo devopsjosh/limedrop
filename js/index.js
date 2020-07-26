@@ -1616,6 +1616,10 @@ require(["D2Bot"], function (D2BOTAPI) {
 		var selectedList = $("#item-list-select").val()
 		var itemLists = JSON.parse(window.localStorage.getItem("itemLists"));
 		var itemContent = itemLists[selectedList];
+
+		// Clear search list
+		$("#items-list").empty();
+
 		Object.keys(itemContent).forEach(function (key) {
 			var item = itemContent[key]
 			item.group = null;
