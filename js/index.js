@@ -1612,6 +1612,18 @@ require(["D2Bot"], function (D2BOTAPI) {
 		$("#list-chooser").modal("show");
 	});
 
+	$("#item-list-delete").click(function () {
+
+		var confirmation = confirm("Are you sure you want to delete?")
+		if (confirmation)
+			var selectedList = $("#item-list-select").val()
+		var itemLists = JSON.parse(window.localStorage.getItem("itemLists")) || null;
+		if (itemLists) {
+			delete itemLists[selectedList];
+		}
+		window.localStorage.setItem("itemLists", JSON.stringify(itemLists))
+	})
+
 	$("#item-list-button").click(function () {
 		var selectedList = $("#item-list-select").val()
 		var itemLists = JSON.parse(window.localStorage.getItem("itemLists"));
