@@ -1667,25 +1667,19 @@ require(["D2Bot"], function (D2BOTAPI) {
 	});
 
 	$("#imgur-upload-btn").click(function () {
-
+		$("#upload-imgur-modal").modal("show");
 		var itemList = getDropQueueList();
-		if (!itemList.length) {
-			alert('You must add items to drop queue!');
-		}
-		else {
-			$("#upload-imgur-modal").modal("show");
-			var container = document.getElementById("itemScreenshot");
-			window.ItemScreenshot.drawCompilation(itemList).then((template) => {
-				container.innerHTML = template;
-				let width = container.firstChild.style.width.split("px")[0];
-				$("#imgurContainer").css("max-width", width + "px");
-				/*setTimeout(function(){
-					html2canvas(container.firstChild).then(canvas => {
-						container.appendChild(canvas)
-					});
-				}, 500);*/
-			});
-		}
+		var container = document.getElementById("itemScreenshot");
+		window.ItemScreenshot.drawCompilation(itemList).then((template) => {
+			container.innerHTML = template;
+			let width = container.firstChild.style.width.split("px")[0];
+			$("#imgurContainer").css("max-width", width + "px");
+			/*setTimeout(function(){
+				html2canvas(container.firstChild).then(canvas => {
+					container.appendChild(canvas)
+				});
+			}, 500);*/
+		});
 	});
 
 	$("#begin-upload-btn").click(function () {
