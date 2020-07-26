@@ -346,16 +346,16 @@ input::-webkit-inner-spin-button {
   background-color: transparent;
 }
 .styled-item-menu select {
-    border: none;
-    color: white;
-    padding: 5px;
-    background-color: #505050;
-    border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px;
+  background-color: #505050;
+  border-radius: 5px;
 }
 
 .styled-item-menu select[size] {
-    width: 100%;
-    height: calc(100% - 50px);
+  width: 100%;
+  height: calc(100% - 50px);
 }
 
 .styled-item-menu select:focus:se {
@@ -528,7 +528,7 @@ h6.drop-queue-styled {
   border-radius: 15px;
 }
 
-.navbar-icons{
+.navbar-icons {
   font-size: 20px;
 }
 .inventory-wrapper .comment-row {
@@ -541,16 +541,16 @@ h6.drop-queue-styled {
   flex-wrap: wrap;
 }
 .inventory-wrapper.grid .items-list > div {
-    width: 300px;
+  width: 300px;
 }
 .inventory-column {
-    width: 100%;
-    flex: 1 100%;
-    max-width: 100%;
+  width: 100%;
+  flex: 1 100%;
+  max-width: 100%;
 }
 .item-position {
-    font-size:2rem;
-    color: #ff0000 !important;
+  font-size: 2rem;
+  color: #ff0000 !important;
 }
 .comment-text {
   flex: 1;
@@ -558,16 +558,15 @@ h6.drop-queue-styled {
 .comment-content {
   width: 100%;
 }
-.grid .comment-content{
+.grid .comment-content {
   display: flex;
   flex-direction: column;
-
 }
 .comment-content .comment-footer {
   position: relative;
 }
 #inv-card-title {
-  display:flex;
+  display: flex;
 }
 #inv-card-title > h4 {
   flex: 8;
@@ -581,4 +580,17 @@ h6.drop-queue-styled {
 }
 .view-select.enabled {
   opacity: 1 !important;
+}
+
+#item-list-select {
+  padding: 16px;
+  width: 100%;
+}
+.modal-header,
+.modal-content,
+.modal-footer {
+  border-color: #19cc052e !important;
+}
+.modal-content {
+  border-radius: 0 !important;
 }

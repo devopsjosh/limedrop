@@ -553,13 +553,13 @@
                         Capture
                         <i class="ml-1 far fa-images"></i>
 					</button>
-					<button class="btn btn-success waves-effect waves-dark" id="export-btn">
-                        Save
+					<button class="btn btn-success waves-effect waves-dark" id="save-btn">
+                        Save List
                         <i class="ml-1 far fa-arrow-alt-circle-up"></i>
 					</button>
 					<input id='importInput' type='file' name='queueFile' hidden/>
-					<button class="btn btn-success waves-effect waves-dark" id="import-btn">
-                        Import
+					<button class="btn btn-success waves-effect waves-dark" id="load-btn">
+                        Load List
                         <i class="ml-1 far fa-arrow-alt-circle-down"></i>
 					</button>
 				  </div>
@@ -762,6 +762,45 @@
 		</div>
 	  </div>
 	</div>
+
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id="list-chooser"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="template-imgurUpload"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document" id="itemListContainer">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="template-itemListChooser">Load save list</h5>
+            <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+            >
+                <i class="far fa-times-circle fa-2x"></i>
+            </button>
+        </div>
+        <div class="modal-body" style="padding:24px">
+            <select id="item-list-select">
+
+            </select>
+        </div>
+        <div class="modal-footer">
+            <button
+                id="item-list-button"
+                type="button"
+                class="btn btn-success"
+            >
+                Load List
+            </button>
+        </div>
+    </div>
+    </div>
 
 	<!-- Modal -->
 	<div
